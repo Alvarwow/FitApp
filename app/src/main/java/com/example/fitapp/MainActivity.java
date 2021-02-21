@@ -14,12 +14,18 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
     private EditText email;
     private EditText pass;
     private FirebaseAuth mAuth;
+    DatabaseReference mRootReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +36,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button register = findViewById(R.id.bRegister);
         register.setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
+mRootReference= FirebaseDatabase.getInstance().getReference("ejercicio");
+mRootReference.addValueEventListener(new ValueEventListener() {
+    @Override
+    public void onDataChange(@NonNull DataSnapshot datasnapshot) {
 
+       for(DataSnapshot snapshot:datasnapshot.getChildren()){
+
+       }
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError error) {
+
+    }
+});
     }
 
     @Override
