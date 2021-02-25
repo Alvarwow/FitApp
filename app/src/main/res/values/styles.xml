@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Botones" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#F8F4F4</item>
+        <item name="android:backgroundTint">#5359f9</item>
+    </style>
+    <style name="Input" parent="TextAppearance.AppCompat">
+
+        <item name="android:background">@color/white</item>
+    </style>
+</resources>

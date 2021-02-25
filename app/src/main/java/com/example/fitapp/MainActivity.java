@@ -36,21 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button register = findViewById(R.id.bRegister);
         register.setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
-mRootReference= FirebaseDatabase.getInstance().getReference("ejercicio");
-mRootReference.addValueEventListener(new ValueEventListener() {
-    @Override
-    public void onDataChange(@NonNull DataSnapshot datasnapshot) {
 
-       for(DataSnapshot snapshot:datasnapshot.getChildren()){
-
-       }
-    }
-
-    @Override
-    public void onCancelled(@NonNull DatabaseError error) {
-
-    }
-});
     }
 
     @Override

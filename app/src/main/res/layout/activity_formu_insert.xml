@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".formuInsert"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#ff6801"
+    >
 
     <EditText
         android:id="@+id/eNombre"
@@ -13,7 +16,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Nombre del ejercicio"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        style="@style/Input"/>
 
     <EditText
         android:id="@+id/eRepeticiones"
@@ -21,7 +25,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Repeticiones"
-        android:inputType="number" />
+        android:inputType="number"
+        style="@style/Input"/>
 
     <EditText
         android:id="@+id/eSeries"
@@ -29,7 +34,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Series"
-        android:inputType="number" />
+        android:inputType="number"
+        style="@style/Input"/>
 
     <EditText
         android:id="@+id/eVideo"
@@ -37,12 +43,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Enlace al video"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        style="@style/Input"/>
 
     <Button
         android:id="@+id/bAgregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/Botones"
         android:text="+ Agregar" />
 
 </LinearLayout>

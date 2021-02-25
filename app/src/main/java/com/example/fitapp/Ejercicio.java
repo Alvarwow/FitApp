@@ -1,19 +1,19 @@
 package com.example.fitapp;
 
-public class ejercicio {
+public class Ejercicio {
 
     private String nombre;
     private int repeticiones;
     private int series;
     private String video;
 
-    public ejercicio(String nombre, int repeticiones, int series, String video) {
+    public Ejercicio(String nombre, int repeticiones, int series, String video) {
         this.nombre = nombre;
         this.repeticiones = repeticiones;
         this.series = series;
         this.video = video;
     }
-    public ejercicio() {
+    public Ejercicio() {
 
     }
     public String getNombre() {
