@@ -10,14 +10,24 @@
     android:background="#ff6801"
     >
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Añadir ejercicio"
+        android:textAlignment="center"
+        android:textColor="#F8F5F5"
+        android:textSize="42dp" />
+
     <EditText
         android:id="@+id/eNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Nombre del ejercicio"
+
         android:inputType="textPersonName"
-        style="@style/Input"/>
+        style="@style/Input"
+        android:layout_marginBottom="10dp"/>
 
     <EditText
         android:id="@+id/eRepeticiones"
@@ -26,6 +36,7 @@
         android:ems="10"
         android:hint="Repeticiones"
         android:inputType="number"
+        android:layout_marginBottom="10dp"
         style="@style/Input"/>
 
     <EditText
@@ -35,6 +46,7 @@
         android:ems="10"
         android:hint="Series"
         android:inputType="number"
+        android:layout_marginBottom="10dp"
         style="@style/Input"/>
 
     <EditText
@@ -42,7 +54,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Enlace al video"
+        android:hint="Enlace al video*"
+        android:layout_marginBottom="10dp"
         android:inputType="textPersonName"
         style="@style/Input"/>
 
@@ -50,6 +63,7 @@
         android:id="@+id/bAgregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         style="@style/Botones"
         android:text="+ Agregar" />
 

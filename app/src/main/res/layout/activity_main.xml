@@ -21,8 +21,10 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:text="FitAPP"
+        android:textColor="@color/white"
         android:textAlignment="center"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:layout_marginBottom="30dp"/>
 
     <EditText
         android:id="@+id/eEmail"
@@ -31,16 +33,21 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:layout_margin="10dp"
+        android:backgroundTint="@color/white"
+        android:hint="Correo electronico"
+        android:textColorHint="@color/white"
         />
 
     <EditText
         android:id="@+id/ePass"
+        style="@style/Input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
         android:layout_margin="10dp"
-        android:background="@color/white"/>
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/bLogin"

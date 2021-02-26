@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -47,10 +49,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
+    //Crea un nuevo usuario mediante el sistema de autentificacion de firebase, necesita un correo y una contraseña
    public void createAcount(){
        email = findViewById(R.id.eEmail);
        pass = findViewById(R.id.ePass);
 
+       //Listener de firebase
        mAuth.createUserWithEmailAndPassword(email.getText().toString(), pass.getText().toString())
                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                    @Override
@@ -59,12 +63,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                            // Sign in success, update UI with the signed-in user's information
                            Log.d(TAG, "createUserWithEmail:success");
                            FirebaseUser user = mAuth.getCurrentUser();
+                           Toast.makeText(MainActivity.this, "Usuario creado correctamente", Toast.LENGTH_SHORT).show();
+                           //Iniciamos sesion una vez que hemos creado la cuenta.
+                           login();
 
                        } else {
                            // If sign in fails, display a message to the user.
                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                           //Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
-                                //   Toast.LENGTH_SHORT).show();
+                           Toast.makeText(MainActivity.this, "No se ha podido crear uauario", Toast.LENGTH_SHORT).show();
 
                        }
 
@@ -73,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                });
 
    }
+   //Comprueba si existe un usuario y en caso de que este registrado en la base de datos, permite el acceso a la aplicacion.
    public void login(){
        email = findViewById(R.id.eEmail);
        pass = findViewById(R.id.ePass);
@@ -87,7 +94,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                            lanzarIntent();
                        } else {
                            // If sign in fails, display a message to the user.
-                           Log.w(TAG, "signInWithEmail:failure", task.getException());
+                           Toast.makeText(MainActivity.this, "No se ha encontrado al usuario, comprueba el correo y la contraseña"
+                                   , Toast.LENGTH_SHORT).show();
 
 
                        }
