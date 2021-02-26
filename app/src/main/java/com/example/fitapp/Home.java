@@ -25,6 +25,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     private ArrayList<Ejercicio> ejercicios = new ArrayList<Ejercicio>();
     private ArrayList<String> referenciaEjercicio = new ArrayList<String>();
     private ListView listView;
+//coment para pushear
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
